@@ -12,9 +12,9 @@ window.onload = function() {
     };
 
     EVDB.API.call("/events/search", oArgs, function(oData) {
-      var ex = JSON.stringify(oData);
-      var ex2 = document.getElementById("e1");
-      ex2.innerHTML = ex;
+      var eventfulData = JSON.stringify(oData, null, " ");
+      var contents = document.getElementById("e2");
+      contents.innerHTML = eventfulData;
     });
   }
 };
