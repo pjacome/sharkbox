@@ -16,7 +16,7 @@ gulp.task('watch', function() {
     gulp.watch(htmlSources, ['html']);
 });
 
-var paths = ['./src/app/**/*.js','./src/app/**/*.css'];
+var paths = ['./src/app/js/events.module.js','./src/app/**/*.js','./src/app/**/*.css'];
 
 gulp.task('inject', function() {
     var sources = gulp.src(paths, {read: false});

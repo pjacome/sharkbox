@@ -3,21 +3,22 @@
 
     angular
         .module('app')
-        .controller('eventCtrl', eventCtrl);
+        .controller('eventController', eventController);
 
-    eventCtrl.$inject = ['eventFactory'];
+    eventController.$inject = ['eventFactory','$stateParams','$state'];
 
     /* @ngInject */
-    function eventCtrl(eventFactory) {
+    function eventController(eventFactory, $stateParams, $state) {
         var vm = this;
-        vm.title = 'eventCtrl';
+        vm.title = 'eventController';
         //properties
         
         vm.getEvents = getEvents;
+        vm.events = [];
         // vm.reviewlist = [];
         // vm.review = {};
         //methods
-        // vm.events = events;
+        
         // vm.addReview = addReview;
         // vm.removeReview = removeReview;
         // vm.updateReview = updateReview;
@@ -35,14 +36,15 @@
         	);
         }
 
-//         function addReview() {
-//         	eventFactory.add(vm.review).then(
-//         		function(newReview) {
-//         			vm.reviewlist.push(newReview);
-//         			vm.review = {};
-//         		}
-//         	);
-//         }
+        // function addReview() {
+        // 	eventFactory.add(vm.review).then(
+        // 		function(newReview) {
+        // 			vm.reviewlist.push(newReview);
+        // 			console.log(vm.reviewlist);
+        // 			vm.review = {};
+        // 		}
+        // 	);
+        // }
 //         function removeReview(review) {
 //         	if(confirm("Are you sure you want to delete your review?")) {
 //         		eventFactory.remove(review).then(

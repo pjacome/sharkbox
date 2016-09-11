@@ -10,22 +10,13 @@
 <!-- inject:css -->
 <!-- endinject -->
 </head>
-<body ng-controller='eventCtrl as event'>
-<div class="jumbotron text-center">
-	<h1>Next Event</h1>
+<body>
+<div class="container">
+	<div ui-view>
+
+	</div>
+
 </div>
-<div class="container control-group">
-     <form ng-submit="event.getEvents(event.city)">
-		<div class="input-group input-group-lg">
-			<input type="text" class="form-control" placeholder="Enter city" ng-model="event.city">
-			<span  class="input-group-btn">
-			<button class="btn btn-info" type="submit">Go</button>
-			</span>
-		</div>
-	<br>
-	</form>
-</div>
-<pre>{{event.events | json}}</pre>
 <!-- bower:js -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -34,12 +25,9 @@
 <!-- endbower -->
 
 <!-- inject:js -->
-
-<script src="app/events.module.js"></script>
-<script src="app/events.controller.js"></script>
-<script src="app/events.factory.js"></script>
-
-
+<script src="app/js/events.module.js"></script>
+<script src="app/js/events.controller.js"></script>
+<script src="app/js/events.factory.js"></script>
 <!-- endinject -->
 </body>
 </html>
