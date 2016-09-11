@@ -1,20 +1,23 @@
 'use strict';
 
 var express = require('express');
-var mongoose= require('mongoose');
+var mongo   = require('mongodb');
+var MongoClient = mongo.MongoClient;
+MongoClient.connect('mongodb://localhost:27017/test', function(err, db) {
+    if(err) {
+        console.log("you fucked up mongo somehow someway.", err);
+        return;
+    } else {
+        console.log("Connected successfully to mongo localhost");
+    }
+});
+
 var app = express();
 var options = {
     root: __dirname + '/views',
     dotfiles: 'deny',
     headers: {}
 };
-
-mongoose.connect('mongodb://localhost/test');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-    console.log("Mongodb connected @ localhost/test");
-});
 
 app.use('/', express.static(__dirname + '/public'));
 
@@ -26,6 +29,6 @@ app.listen(3000, function() {
     console.log("listening on port 3000");
 });
 
-var routes = require('./routes');
-app.use('/', routes);
+// var routes = require('routes');
+// app.use('/', routes);
 module.exports = app;
