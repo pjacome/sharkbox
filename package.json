@@ -1,14 +1,24 @@
 {
-  "name": "upcomingevents",
+  "name": "nextevent",
   "version": "1.0.0",
-  "description": "Shows you the upcoming events and concerts in your area",
-  "main": "index.js",
+  "description": "origin code academy",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjacome/sharkbox.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pjacome/sharkbox/issues"
+  },
+  "homepage": "https://github.com/pjacome/sharkbox#readme",
   "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.6.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-inject": "^4.1.0",
