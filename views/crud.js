@@ -11,12 +11,10 @@ window.onload = function() {
       sort_order: "popularity"
     };
 
-    var loc = EVDB.API.call("/events/search", oArgs, function(oData) {
+    EVDB.API.call("/events/search", oArgs, function(oData) {
       var ex = JSON.stringify(oData);
-      var ex2 = document.getElementById("myP");
+      var ex2 = document.getElementById("e1");
       ex2.innerHTML = ex;
     });
-
-    alert("loc = " + loc);
   }
 };
