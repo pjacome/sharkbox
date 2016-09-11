@@ -1,5 +1,5 @@
 body {
-    background-image: url("../images/background1.jpg");
+    background-image: url("http://static1.squarespace.com/static/574871f2e321404d84512955/t/5750e65662cd947608162636/1464919642872/patternbackground-17-17.jpg?format=1500w");
 }
 
 #filterDiv {
@@ -9,12 +9,12 @@ body {
 }
 
 .eventContent {
-    width: 98.5%;
+    width: calc(100% - 30px);
     height: 200px;
     background-color: #f7f7f9;
-    margin: 0 auto;
+    margin: 0px auto;
     border-radius: 7px;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
 }
 
 .aEventContent {

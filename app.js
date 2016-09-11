@@ -5,10 +5,11 @@ var mongo   = require('mongodb');
 var MongoClient = mongo.MongoClient;
 MongoClient.connect('mongodb://localhost:27017/test', function(err, db) {
     if(err) {
-        console.log("you fucked up mongo somehow someway.", err);
+        console.log("> Could not connect to Mongo Client.\n"+
+            "> Try running 'mongodb.exe' in 'Git Bash' to start the Mongo Client.");
         return;
     } else {
-        console.log("Connected successfully to mongo localhost");
+        console.log("Connected successfully to Mongo Client.");
     }
 });
 
