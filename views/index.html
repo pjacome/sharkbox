@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="../public/css/index.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="http://api.eventful.com/js/api"></script>
-  <script src="crud.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <script src="../public/jscrud.js"></script>
 </head>
 <body>
     <!--Begins Nav Bar-->
@@ -17,7 +18,7 @@
     <nav class="navbar navbar-default">
     <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">EventViewer</a>
+      <a class="navbar-brand" href="#">NextEvent</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
@@ -84,6 +85,16 @@
       </div>
     </div>
   </div>
+
+  <div id="ex1Data">HELLo
+  </div>
+  <script type="text/javascript">
+    var myInfo = "<p>My name is {{name}} and I live at {{street}} in {{city}}, {{state}}";
+    var template = Handlebars.compile(myInfo);
+
+    var data  = template({name: "Pablo", street:"telegraph canyon road", city: "san diego", state: "CA"});
+    document.getElementById("ex1Data").innerHTML = data;
+  </script>
 
   <!-- End   Content -->
 

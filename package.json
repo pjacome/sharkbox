@@ -18,6 +18,7 @@
   "homepage": "https://github.com/pjacome/sharkbox#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "handlebars": "^4.0.5",
     "mongodb": "^2.2.9"
   }
 }

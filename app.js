@@ -20,16 +20,15 @@ var options = {
     headers: {}
 };
 
+app.set('port', process.env.PORT || 5000);
 app.use('/', express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
     res.sendFile('index.html', options);
 });
 
-app.listen(3000, function() {
-    console.log("listening on port 3000");
+app.listen(app.get('port'), function() {
+    console.log("listening on port 5000");
 });
 
-// var routes = require('routes');
-// app.use('/', routes);
 module.exports = app;
