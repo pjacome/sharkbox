@@ -12,29 +12,50 @@ window.onload = function() {
     };
 
     EVDB.API.call("/events/search", oArgs, function(oData) {
-      var initContent = document.getElementById("beginHere");
+      // var initContent = document.getElementById("beginHere");
 
-      var contentContainer = document.getElementById("e1");
-      contentContainer.innerHTML = oData;
+      // var contentContainer = document.getElementById("e1");
+      // contentContainer.innerHTML = oData;
 
-      var totalItems = oData.total_items;
-      for(var i = 0; i < totalItems; ++i) {
-        // manipulate DOM here
-        var divID = "'e" + i + "'>"
-        var eventDivs = 
-          "<hr>" +
-          "<div class='eventContent'>" +
-            "<div class='aEventContent'>" +
-              "<div class='leftContent eventThumbnails'>" +
-              "</div>" +
-              "<div class='rightContent' id=" + divID +
-                "<p>This is an example of what the text will look like</p>" +
-              "</div>" +
-            "</div>" +
-          "</div>";
+      // TRYING HANDLEBARS OUT
+      var source = document.getElementById('some-template').innerHTML;
+      var template = Handlebars.compile(source);
+      
+      var events = [
+        {
+          city_name: "Tulsa",
+          start_time: "now",
+          venue_address: "here"
+        },
+        {
+          city_name: "Tulsa",
+          start_time: "now",
+          venue_address: "here"
+        }
+      ];//oData.events.event;
+      
+      console.log(events);
+      document.getElementById('myDiv').innerHTML = template(events);
+      // END EFFORT
 
-        initContent.nextSibling.innerHTML = eventDivs;
-      }
+      // var totalItems = oData.total_items;
+      // for(var i = 0; i < totalItems; ++i) {
+      //   // manipulate DOM here
+      //   var divID = "'e" + i + "'>"
+        // var eventDivs = 
+        //   "<hr>" +
+        //   "<div class='eventContent'>" +
+        //     "<div class='aEventContent'>" +
+        //       "<div class='leftContent eventThumbnails'>" +
+        //       "</div>" +
+        //       "<div class='rightContent' id=" + divID +
+        //         "<p>This is an example of what the text will look like</p>" +
+        //       "</div>" +
+        //     "</div>" +
+        //   "</div>";
+
+        // initContent.nextSibling.innerHTML = eventDivs;
+      // }
     });
   }
 };

@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/pjacome/sharkbox.git"
   },
-  "author": "",
+  "author": "Pablo Jacome",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pjacome/sharkbox/issues"
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/pjacome/sharkbox#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "handlebars": "^4.0.5",
+    "express-handlebars": "^3.0.0",
     "mongodb": "^2.2.9"
   }
 }

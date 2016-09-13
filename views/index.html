@@ -1,104 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../public/css/index.css">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="http://api.eventful.com/js/api"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-  <script src="../public/jscrud.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://api.eventful.com/js/api"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+    <script src="js/crud.js"></script>
 </head>
 <body>
-    <!--Begins Nav Bar-->
-  <div class="container-fluid">
     <!--Full Width Container -->
-    <nav class="navbar navbar-default">
     <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">NextEvent</a>
+        <!--Begins Nav Bar-->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">NextEvent</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/home">Home</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--Ends Nav Bar-->
+
+        <!-- Begins Search bar-->
+        <div id="filterDiv">
+            <div class="form-group">
+            <label for="exampleSelect1">States</label>
+                <select class="form-control" id="States">
+                    <option>Select</option>
+                    <option>States</option>
+                    <option>California</option>
+                    <option>Arizona</option>
+                    <option>Nevada</option>
+                    <option>Arkansas</option>
+                    <option>Colorado</option>
+                </select>
+            </div>
+            <div class="form-group">
+            <label for="exampleSelect1">Cities</label>
+                <select class="form-control" id="Cities">
+                    <option>Select</option>
+                    <option>San Diego</option>
+                    <option>La Jolla</option>
+                    <option>New York</option>
+                    <option>Los Angeles</option>
+                    <option>Salt Lake City</option>
+                    <option>Tucson</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleSelect1">Radius</label>
+                <select class="form-control" id="Radius">
+                    <option>Select</option>
+                    <option>5</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                    <option>30</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" id="FilterButton">Search</button>
+        </div> <!-- End #filterDiv-->  
+    </div>  
+    <!--End Search-->
+
+    <!-- Begin Content -->
+    <hr>
+    <div id="beginHere"></div>
+    <div class="eventContent">
+        <div class="aEventContent">
+        <div class="leftContent eventThumbnails">
+            <!-- this div is left blank on purpose -->
+        </div>
+        <div class="rightContent" id="e1">
+            <p>This is an example of what the text will look like</p>
+        </div>
+        </div>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Concerts</a></li>
-      <li><a href="#">Sports</a></li>
-      <li><a href="#">Calendar</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-    </div>
-    </nav>
-    <!--Ends Nav Bar-->
-    <!-- Begins Search bar-->
-    <div id="filterDiv">
-      <div class="form-group">
-        <label for="exampleSelect1">States</label>
-        <select class="form-control" id="States">
-          <option>Select</option>
-          <option>States</option>
-          <option>California</option>
-          <option>Arizona</option>
-          <option>Nevada</option>
-          <option>Arkansas</option>
-          <option>Colorado</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleSelect1">Cities</label>
-        <select class="form-control" id="Cities">
-          <option>Select</option>
-          <option>San Diego</option>
-          <option>La Jolla</option>
-          <option>New York</option>
-          <option>Los Angeles</option>
-          <option>Salt Lake City</option>
-          <option>Tucson</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleSelect1">Radius</label>
-        <select class="form-control" id="Radius">
-          <option>Select</option>
-          <option>5</option>
-          <option>10</option>
-          <option>15</option>
-          <option>20</option>
-          <option>30</option>
-        </select>
-      </div>
-      <button class="btn btn-primary" id="FilterButton">Search</button>
-    </div> <!-- End #filterDiv-->  
-  </div>  
-  <!--End Search-->
+    <!-- End   Content -->
 
-  <!-- Begin Content -->
-  <hr>
-  <div id="beginHere"></div>
-  <div class="eventContent">
-    <div class="aEventContent">
-      <div class="leftContent eventThumbnails">
-        <!-- this div is left blank on purpose -->
-      </div>
-      <div class="rightContent" id="e1">
-        <p>This is an example of what the text will look like</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="ex1Data">HELLo
-  </div>
-  <script type="text/javascript">
-    var myInfo = "<p>My name is {{name}} and I live at {{street}} in {{city}}, {{state}}";
-    var template = Handlebars.compile(myInfo);
-
-    var data  = template({name: "Pablo", street:"telegraph canyon road", city: "san diego", state: "CA"});
-    document.getElementById("ex1Data").innerHTML = data;
-  </script>
-
-  <!-- End   Content -->
-
-  <p id="myP"></p>
 </body>
-
 </html>
