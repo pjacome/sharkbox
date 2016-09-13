@@ -5,8 +5,9 @@
 <form autocomplete="off">
     <div class="form-group col-sm-4">
         <label for="exampleSelect1">State</label>
-        <select class="form-control" name="state" id="stateSelect">
-            <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+        <select class="form-control" name="state" id="stateSelect" placeholder="Select a State">
+            <option selected></option>
+            <option value="AL">Alabama</option><option>Alaska</option><option>Arizona</option>
             <option>Arkansas</option><option>California</option><option>Colorado</option>
             <option>Connecticut</option><option>Delaware</option><option>Florida</option>
             <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
@@ -33,7 +34,8 @@
 
     <div class="form-group col-sm-4">
         <label for="exampleSelect1">Date</label>
-        <select class="form-control" name="date" id="dateSelect">
+        <select class="form-control" name="date" id="dateSelect" placeholder="Select a Date">
+            <option selected></option>
             <option>All</option>
             <option>Future</option>
             <option>Past</option>
@@ -54,3 +56,5 @@
 
 <div id="e1">
 </div>
+
+<script type="text/javascript" src="js/eventFinder.js"></script>

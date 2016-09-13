@@ -21,13 +21,20 @@ window.onload = function() {
         xhr.send(JSON.stringify(data));
 
         xhr.onreadystatechange = function() {
+            var DONE = 4;
             var OK   = 200;
-            if(xhr.readyState === XMLHttpRequest.DONE) {
+            var response;
+            if(xhr.readyState === DONE) {
                 if(xhr.status === OK) {
-                    console.log(JSON.parse(xhr.responseText));
-                } else {
+                    response = JSON.parse(xhr.responseText);
+                    console.log(response);
+                    if(response.error !== undefined) {
+                        UpdateForm();
+                    }
+                } else if(xhr.status === 404 || xhr.status === 400) {
                     console.log('Error: ' + xhr.status);
-                    // window.location = '/500';
+                } else {
+                    console.log("500: Server Error");
                 }
             }
         };
@@ -39,5 +46,9 @@ window.onload = function() {
         //   page_size: "5",
         //   sort_order: "popularity"
         // };
+    }
+
+    function UpdateForm() {
+        alert("heeyyyyyyy");
     }
 };

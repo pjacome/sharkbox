@@ -28,7 +28,7 @@ router.post('/events/search', events.POST);
 */
 
 router.use(function(req, res) {
-    console.log("Tried to visit '" + req.url + "'");
+    console.log("Looking for URL: '" + req.url + "'");
     res.type('text/html');
     res.status(404);
     res.render('404');
