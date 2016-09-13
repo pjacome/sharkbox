@@ -15,11 +15,6 @@ MongoClient.connect('mongodb://localhost:27017/test', function(err, db) {
 });
 
 var app = express();
-var options = {
-    root: __dirname + '/views',
-    dotfiles: 'deny',
-    headers: {}
-};
 
 app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -29,17 +24,8 @@ app.disable('x-powered-by');
 app.set('port', process.env.PORT || 5000);
 app.use('/', express.static(__dirname + '/public'));
 
-app.get('/', function(req, res) {
-    res.render('home')
-});
-
-app.get('/discussion', function(req, res) {
-    res.render('discussion');
-});
-
-app.get('/index', function(req, res) {
-    res.sendFile('index.html', options);
-});
+// routes
+app.use('/', require('./routes/routes'));
 
 app.use(function(req, res) {
     res.type('text/html');
