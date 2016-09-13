@@ -29,6 +29,7 @@ body {
     height: inherit;
     background-color: yellow;
     position: absolute;
+    border-radius: 7px 0px 0px 7px;
 }
 
 .middleContent {
@@ -45,4 +46,5 @@ body {
     background-color: red;
     position: absolute;
     right: 0px;
+    border-radius: 0px 7px 7px 0px;
 }
