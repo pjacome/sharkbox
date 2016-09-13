@@ -1,7 +1,7 @@
 window.onload = function() {
     var filterButton = document.getElementById("filterButton");
     filterButton.onclick = function(e) {
-        // prevent form from refreshing page
+        // prevent <form> from refreshing page
         e.preventDefault();
 
         var state = document.getElementById('stateSelect').value,
@@ -38,14 +38,6 @@ window.onload = function() {
                 }
             }
         };
-        // var oArgs = {
-        //   app_key: "ThPMmx93M7QSk4Mq",
-        //   q: "music",
-        //   where: "San Diego",
-        //   date: "2013061000-2015062000",
-        //   page_size: "5",
-        //   sort_order: "popularity"
-        // };
     }
 
     function UpdateForm() {

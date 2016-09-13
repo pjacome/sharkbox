@@ -38,7 +38,7 @@ events.POST = function(req, res) {
         count_only: '',
         sort_order: '',
         sort_direction: '',
-        page_size: '',
+        page_size: '5', // THIS IS HARDCODED
         page_number: '',
         image_sizes: '',
         languages: '',

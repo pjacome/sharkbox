@@ -2,12 +2,6 @@ body {
     background-image: url("http://static1.squarespace.com/static/574871f2e321404d84512955/t/5750e65662cd947608162636/1464919642872/patternbackground-17-17.jpg?format=1500w");
 }
 
-#filterDiv {
-    background-color: #f7f7f9; /*bootstrap colors*/
-    border-radius: 7px;
-    padding: 15px;
-}
-
 .eventContent {
     width: calc(100% - 30px);
     height: 200px;
@@ -15,21 +9,10 @@ body {
     margin: 0px auto;
     border-radius: 7px;
     /*margin-bottom: 20px;*/
-}
-
-.aEventContent {
-    height: inherit;
-    width: inherit;
     position: relative;
 }
 
-.leftContent {
-    height: inherit;
-    width: 200px;
-    position: absolute;
-}
-
-.eventThumbnails {
+.eventThumbnail {
     overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -37,9 +20,29 @@ body {
     background-image: url("../images/hackathonfiler.png");
 }
 
-.rightContent {
+.eventGoogleMaps {
+
+}
+
+.leftContent {
+    width: 200px;
     height: inherit;
-    width: calc(100% - 200px);
+    background-color: yellow;
+    position: absolute;
+}
+
+.middleContent {
+    width: calc(100% - 400px);
+    height: inherit;
+    background-color: green;
     position: absolute;
     left: 200px;
+}
+
+.rightContent {
+    width: 200px;
+    height: inherit;
+    background-color: red;
+    position: absolute;
+    right: 0px;
 }
