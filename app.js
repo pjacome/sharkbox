@@ -19,6 +19,10 @@ var app = express();
 app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+// for parsing encoded data (typically for POSTs)
+app.use(require('body-parser').urlencoded({extended: true}));
+app.use(require('body-parser').json());
+
 // blocks header info about Node technology
 app.disable('x-powered-by');
 app.set('port', process.env.PORT || 5000);
@@ -26,18 +30,6 @@ app.use('/', express.static(__dirname + '/public'));
 
 // routes
 app.use('/', require('./routes/routes'));
-
-app.use(function(req, res) {
-    res.type('text/html');
-    res.status(404);
-    res.render('404');
-});
-
-app.use(function(err, req, res, next) {
-    console.error(err.stack);
-    res.status(500);
-    res.render('500');
-});
 
 app.listen(app.get('port'), function() {
     console.log("listening on port " + app.get('port'));

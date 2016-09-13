@@ -2,42 +2,52 @@
     <h3>Search for Events near you!</h3>
 </div>
 
-<form>
-  <div class="form-group col-sm-4">
-    <label for="exampleSelect1">City</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>San Diego</option>
-      <option>Los Angeles</option>
-      <option>San Francisco</option>
-      <option>Long Beach</option>
-      <option>Chula Vista</option>
-    </select>
-  </div>
+<form autocomplete="off">
+    <div class="form-group col-sm-4">
+        <label for="exampleSelect1">State</label>
+        <select class="form-control" name="state" id="stateSelect">
+            <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+            <option>Arkansas</option><option>California</option><option>Colorado</option>
+            <option>Connecticut</option><option>Delaware</option><option>Florida</option>
+            <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+            <option>Illinois</option><option>Indiana</option><option>Iowa</option>
+            <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
+            <option>Maine</option><option>Maryland</option><option>Mssachusetts</option>
+            <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+            <option>Missouri</option><option>Montana</option><option>Nebraska</option>
+            <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
+            <option>New Mexico</option><option>New York</option><option>North Carolina</option>
+            <option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+            <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
+            <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
+            <option>Texas</option><option>Utah</option><option>Vermont</option>
+            <option>Virginia</option><option>Washington</option><option>West Virginia</option>
+            <option>Wisconsin</option><option>Wyoming</option>
+        </select>
+    </div>
 
-  <div class="form-group col-sm-4">
-    <label for="exampleSelect1">State</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>CA</option>
-      <option>AL</option>
-      <option>NY</option>
-      <option>MI</option>
-      <option>TX</option>
-    </select>
-  </div>
+    <div class="form-group col-sm-4">
+        <label for="formGroupExampleInput">City</label>
+        <input type="text" class="form-control" name="city" id="citySelect" placeholder="Enter City Name (e.g. New York)">
+    </div>
 
-  <div class="form-group col-sm-4">
-    <label for="exampleSelect1">Category</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>Sports</option>
-      <option>Concerts</option>
-      <option>Food</option>
-      <option>Festival</option>
-    </select>
-  </div>
+    <div class="form-group col-sm-4">
+        <label for="exampleSelect1">Date</label>
+        <select class="form-control" name="date" id="dateSelect">
+            <option>All</option>
+            <option>Future</option>
+            <option>Past</option>
+            <option>Today</option>
+            <option>Last Week</option>
+            <option>This Week</option>
+            <option>Next Week</option>
+            <option>TODO-DATE_RANGE</option>
+        </select>
+    </div>
 
-  <!-- End Form Inputs -->
-  <button type="submit" class="btn btn-primary" id="FilterButton">Submit</button>
-  <h6><small style="color: blue;">Advanced Search</small></h6>
+    <!-- End Form Inputs -->
+    <button type="submit" class="btn btn-primary" id="filterButton">Submit</button>
+    <h6><small style="color: blue;">Advanced Search</small></h6>
 </form>
 
 <hr>
