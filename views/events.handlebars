@@ -54,8 +54,8 @@
 
 <hr>
 
-<div class="eventListContainer">
-    <div class="evenEvent eventContent" id="eventID0">
+<div class="eventListContainer" id="handlebarsEntryPoint">
+    {{!-- <div class="evenEvent eventContent">
         <div class="eventThumbnails leftContent">
             PHOTO HERE
         </div>
@@ -66,10 +66,22 @@
             GOOGLE MAP HERE
         </div>
     </div>
-
-    <div class="oddEvent" id="eventID1">
-        ANOTHER EVENT GOES HERE
-    </div>    
+    <hr> --}}
 </div>
+
+<script id="eventList-template" type="text/x-handlebars-template">
+    <div class="evenEvent eventContent">
+        <div class="eventThumbnails leftContent">
+            EX1: {{all_day}}
+        </div>
+        <div class="eventInformation middleContent">
+            EX2: {{city_name}}
+        </div>
+        <div class="eventGoogleMap rightContent">
+            EX3: {{country_abbr}}
+        </div>
+    </div>
+    <hr>
+</script>
 
 <script type="text/javascript" src="js/eventFinder.js"></script>

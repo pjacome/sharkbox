@@ -27,7 +27,7 @@ window.onload = function() {
             if(xhr.readyState === DONE) {
                 if(xhr.status === OK) {
                     response = JSON.parse(xhr.responseText);
-                    console.log(response);
+                    // console.log(response);
                     if(response.error !== undefined) {
                         UpdateForm();
                     }
@@ -36,6 +36,15 @@ window.onload = function() {
                 } else {
                     console.log("500: Server Error");
                 }
+            }
+            if(response !== undefined) {
+                eventList = response.events.event;
+                console.log(eventList);
+                console.log(eventList[0]);
+                var template = document.getElementById('eventList-template').innerHTML;
+                var templateScript = Handlebars.compile(template);
+                var html = templateScript(eventList[0]);
+                document.getElementById('handlebarsEntryPoint').innerHTML = html;
             }
         };
     }

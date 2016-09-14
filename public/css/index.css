@@ -27,24 +27,29 @@ body {
 .leftContent {
     width: 200px;
     height: inherit;
-    background-color: yellow;
     position: absolute;
     border-radius: 7px 0px 0px 7px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .middleContent {
     width: calc(100% - 400px);
     height: inherit;
-    background-color: green;
     position: absolute;
     left: 200px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .rightContent {
     width: 200px;
     height: inherit;
-    background-color: red;
     position: absolute;
     right: 0px;
     border-radius: 0px 7px 7px 0px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
 }
