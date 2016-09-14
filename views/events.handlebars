@@ -29,7 +29,7 @@
 
     <div class="form-group col-sm-4">
         <label for="formGroupExampleInput">City</label>
-        <input type="text" class="form-control" name="city" id="citySelect" placeholder="Enter City Name (e.g. New York)">
+        <input type="text" class="form-control" name="city" id="citySelect" placeholder="Enter City Name (e.g. New York)" value="San Diego">
     </div>
 
     <div class="form-group col-sm-4">
@@ -55,33 +55,23 @@
 <hr>
 
 <div class="eventListContainer" id="handlebarsEntryPoint">
-    {{!-- <div class="evenEvent eventContent">
-        <div class="eventThumbnails leftContent">
-            PHOTO HERE
-        </div>
-        <div class="eventInformation middleContent">
-            EVENT INFO HERE
-        </div>
-        <div class="eventGoogleMap rightContent">
-            GOOGLE MAP HERE
-        </div>
-    </div>
-    <hr> --}}
 </div>
 
 <script id="eventList-template" type="text/x-handlebars-template">
+    {{#each event}}
     <div class="evenEvent eventContent">
         <div class="eventThumbnails leftContent">
-            EX1: {{all_day}}
+            EX1: {{this}}
         </div>
         <div class="eventInformation middleContent">
-            EX2: {{city_name}}
+            EX2: FUCK
         </div>
         <div class="eventGoogleMap rightContent">
-            EX3: {{country_abbr}}
+            EX3: YOU
         </div>
     </div>
     <hr>
+    {{/each}}
 </script>
 
 <script type="text/javascript" src="js/eventFinder.js"></script>

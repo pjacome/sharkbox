@@ -27,7 +27,6 @@ window.onload = function() {
             if(xhr.readyState === DONE) {
                 if(xhr.status === OK) {
                     response = JSON.parse(xhr.responseText);
-                    // console.log(response);
                     if(response.error !== undefined) {
                         UpdateForm();
                     }
@@ -37,14 +36,30 @@ window.onload = function() {
                     console.log("500: Server Error");
                 }
             }
+
             if(response !== undefined) {
-                eventList = response.events.event;
-                console.log(eventList);
-                console.log(eventList[0]);
-                var template = document.getElementById('eventList-template').innerHTML;
-                var templateScript = Handlebars.compile(template);
-                var html = templateScript(eventList[0]);
-                document.getElementById('handlebarsEntryPoint').innerHTML = html;
+                var event = response.events;
+                console.log(event);
+                event = {
+                    event: [
+                        'pablo',
+                        'jacome',
+                        'enrique'
+                    ]
+                }
+
+                var source = document.getElementById('eventList-template').innerHTML;
+                var template = Handlebars.compile(source);
+                var compiledHTML = template(event);
+                // var compiledHTML = template({
+                //     event: [
+                //         {age: '56'},{age: '789'},{age: '91011'}
+                //     ]
+                // });
+                var entryPoint = document.getElementById('handlebarsEntryPoint');
+                entryPoint.innerHTML = compiledHTML;
+
+                console.log("compiledHTML =", compiledHTML);
             }
         };
     }
