@@ -18,6 +18,7 @@ var app = express();
 
 app.engine('handlebars', handlebars({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+app.set('views/partials', 'partialsDir');
 
 // for parsing encoded data (typically for POSTs)
 app.use(require('body-parser').urlencoded({extended: true}));

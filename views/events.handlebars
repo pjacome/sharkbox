@@ -2,7 +2,7 @@
     <h3>Search for Events near you!</h3>
 </div>
 
-<form autocomplete="off">
+<form autocomplete="off" action="/events/search" method="POST">
     <div class="form-group col-sm-4">
         <label for="exampleSelect1">State</label>
         <select class="form-control" name="state" id="stateSelect" placeholder="Select a State">
@@ -54,24 +54,7 @@
 
 <hr>
 
-<div class="eventListContainer" id="handlebarsEntryPoint">
+<div class="eventListContainer" id="entryPoint">
 </div>
-
-<script id="eventList-template" type="text/x-handlebars-template">
-    {{#each event}}
-    <div class="evenEvent eventContent">
-        <div class="eventThumbnails leftContent">
-            EX1: {{this}}
-        </div>
-        <div class="eventInformation middleContent">
-            EX2: FUCK
-        </div>
-        <div class="eventGoogleMap rightContent">
-            EX3: YOU
-        </div>
-    </div>
-    <hr>
-    {{/each}}
-</script>
 
 <script type="text/javascript" src="js/eventFinder.js"></script>

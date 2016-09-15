@@ -1,7 +1,10 @@
 'use strict';
 
+// var handlebars = require('express-handlebars').create();
+var Handlebars = require('handlebars');
 var config = require('../../config.js');
 var request = require('request');
+var fs = require('fs');
 var events = {};
 
 // HELPER FUNCTIONS
@@ -47,6 +50,7 @@ events.POST = function(req, res) {
         change_multi_day_start: ''
     };
 
+    // make call to eventful api
     request.get(url, {qs: oArgs}, function(err, res2, body) {
         var data = JSON.parse(body);
         if(err) {
@@ -56,7 +60,13 @@ events.POST = function(req, res) {
             console.log("Query String Error: ", data);
             res.json({error: 'Missing parameter'});
         } else {
-            res.json(data);
+            fs.readFile('views/partials/eventList.handlebars', 'utf-8', function(err, file) {
+                if(err) console.log(err);
+
+                var template = Handlebars.compile(file);
+                var compiledHTML = template(data.events);
+                res.send(compiledHTML);
+            });
         }
     });
 };

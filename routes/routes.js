@@ -16,12 +16,7 @@ router.get('/about', function(req, res) {
     res.render('about');
 });
 
-// router.post('/search', function(req, res) {
-//     console.log("We're here!");
-//     res.redirect('/');
-// });
 router.post('/events/search', events.POST);
-
 
 /*
     Catch 400 Errors

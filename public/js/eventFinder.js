@@ -3,6 +3,7 @@ window.onload = function() {
     filterButton.onclick = function(e) {
         // prevent <form> from refreshing page
         e.preventDefault();
+        console.log('sent')
 
         var state = document.getElementById('stateSelect').value,
             city  = document.getElementById('citySelect').value,
@@ -26,7 +27,9 @@ window.onload = function() {
             var response;
             if(xhr.readyState === DONE) {
                 if(xhr.status === OK) {
-                    response = JSON.parse(xhr.responseText);
+                    response = xhr.responseText;
+                    console.log("response =", response);
+                    document.getElementById('entryPoint').innerHTML = response;
                     if(response.error !== undefined) {
                         UpdateForm();
                     }
@@ -35,31 +38,6 @@ window.onload = function() {
                 } else {
                     console.log("500: Server Error");
                 }
-            }
-
-            if(response !== undefined) {
-                var event = response.events;
-                console.log(event);
-                event = {
-                    event: [
-                        'pablo',
-                        'jacome',
-                        'enrique'
-                    ]
-                }
-
-                var source = document.getElementById('eventList-template').innerHTML;
-                var template = Handlebars.compile(source);
-                var compiledHTML = template(event);
-                // var compiledHTML = template({
-                //     event: [
-                //         {age: '56'},{age: '789'},{age: '91011'}
-                //     ]
-                // });
-                var entryPoint = document.getElementById('handlebarsEntryPoint');
-                entryPoint.innerHTML = compiledHTML;
-
-                console.log("compiledHTML =", compiledHTML);
             }
         };
     }
