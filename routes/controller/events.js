@@ -1,6 +1,5 @@
 'use strict';
 
-// var handlebars = require('express-handlebars').create();
 var Handlebars = require('handlebars');
 var config = require('../../config.js');
 var request = require('request');

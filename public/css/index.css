@@ -8,8 +8,8 @@ body {
     background-color: #f7f7f9;
     margin: 0px auto;
     border-radius: 7px;
-    /*margin-bottom: 20px;*/
     position: relative;
+    margin-bottom: 25px;
 }
 
 .eventThumbnail {
@@ -18,6 +18,17 @@ body {
     background-position: center;
     border-radius: 7px 0px 0px 7px;
     background-image: url("../images/hackathonfiler.png");
+}
+
+#eventInfoTable {
+    width: 100%;
+    height: inherit;
+    table-layout: fixed;
+    border-collapse: collapse;,
+}
+
+tr, td {
+    width: 100%;
 }
 
 .eventGoogleMaps {
@@ -52,4 +63,48 @@ body {
     border-top: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
+}
+
+.eventURL {
+    text-decoration: none;
+    color: black;
+}
+
+/* POPOVER CODE author: Shawn Wernig*/
+#hover {
+    display: block;
+    position: relative;
+}
+
+#hover:hover {
+    background: #dddddd;   
+}
+
+#hover a {
+    text-decoration: none;
+    color: black;
+}
+
+#popup {
+    opacity: 0;
+    position: absolute;
+    top: 32px;
+    background: #eeeeee;
+    border: 1px solid black;
+    border-radius: 6px;
+    height: 0px;
+    max-height: 150px;
+    padding: 0 12px;
+    overflow-y: auto;
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+    z-index: 1;
+    word-wrap: break-word;
+}
+
+#hover:hover #popup {
+    padding: 12px 12px;
+    height: auto;
+    opacity: 1;
+    border: 1px solid #eeeeee;
 }
